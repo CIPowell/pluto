@@ -12,7 +12,7 @@ import pluto.controllers.MatchController;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class ApplicationTest {
+public class SmokeTest {
 
     @Autowired
     private MatchController controller;
