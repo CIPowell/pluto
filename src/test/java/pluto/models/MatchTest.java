@@ -10,17 +10,13 @@ public class MatchTest {
 
     @Before
     public void setup() {
-        this.match = new Match("North London", "Hot and sunny");
+        this.match = new Match();
+
+        this.match.setLocation("North London");
     }
 
     @Test
     public void expectLocationToBeNorthLondon() {
         assertEquals("North London", match.getLocation());
-    }
-
-    @Test
-    public void tossCreatesInnings() {
-        match.toss("TPCC", "Kew CC");
-        assertEquals("TPCC 0-0\nKew CC 0-0\n", match.getSmallScore());
     }
 }

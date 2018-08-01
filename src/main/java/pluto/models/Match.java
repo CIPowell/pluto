@@ -1,37 +1,51 @@
 package pluto.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Match {
-    private Innings[] innings;
+    
+    @Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private Integer id;
+
     private String location;
     private String weather;
-    
-    public Match(String location, String weather) {
-        this.innings = new Innings[2];
-        this.location = location;
-        this.weather = weather;
+    private String homeTeam;
+    private String awayTeam;
+
+    public void setHomeTeam(String homeTeam) {
+        this.homeTeam = homeTeam;
     }
 
-    public void toss(String teamBattingFirst, String teamBattingSecond){
-        for (int i = 0; i < innings.length; i++){
-            innings[i] = new Innings(i % 2 == 0 ? teamBattingFirst : teamBattingSecond);
-        }
+    public String getHomeTeam() {
+        return homeTeam;
+    }
+
+    public void setAwayTeam(String awayTeam) {
+        this.awayTeam = awayTeam;
+    }
+
+    public String getAwayTeam() {
+        return awayTeam;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     public String getLocation() {
         return location;
     }
 
-    public String getWeather() {
-        return weather;
+    public void setWeather(String weather) {
+        this.weather = weather;
     }
 
-    public String getSmallScore() {
-        String score = "";
-
-        for(int i = 0; i < innings.length; i++) {
-            score += innings[i].toString() + "\n";
-        }
-
-        return score;
+    public String getWeather() {
+        return weather;
     }
 }
