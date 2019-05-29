@@ -6,6 +6,8 @@ class Innings {
 
     private final String teamName;
 
+    private long wides;
+
     public Innings(String teamName) {
         this.runs = 0;
         this.wickets = 0;
