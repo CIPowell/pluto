@@ -18,4 +18,9 @@ class IndexController {
     public String welcomeMessage() {
         return String.format("{ \"name\": \"%s\", \"version\":\"%s\" }", this.applicationName, this.version);
     }
+
+    @RequestMapping(path = "/", method = { RequestMethod.GET })
+    public String welcomeMessage2() {
+        return String.format("{ \"name\": \"%s\", \"version\":\"%s\" }", this.applicationName, this.version);
+    }
 }
