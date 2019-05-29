@@ -7,6 +7,7 @@ class Innings {
     private final String teamName;
 
     private long wides;
+    private long noBalls;
 
     public Innings(String teamName) {
         this.runs = 0;
